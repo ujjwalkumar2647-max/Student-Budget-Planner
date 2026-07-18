@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monthly Reports</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="wrapper">
+
+<aside class="sidebar">
+
+<div class="brand">
+<i class="ri-wallet-3-fill"></i>
+<h2>Budget Planner</h2>
+</div>
+
+<ul>
+
+<li>
+        <a href="dashboard.html">
+
+<i class="ri-home-5-fill"></i>
+<span>Dashboard</span></a>
+</li>
+
+<li>
+    <a href="Income.html">
+<i class="ri-money-rupee-circle-fill"></i>
+<span>Income</span></a>
+</li>
+
+<li>
+    <a href="expense.html">
+<i class="ri-shopping-cart-2-fill"></i>
+<span>Expenses</span></a>
+</li>
+
+<li>
+    <a href="history.html">
+<i class="ri-history-line"></i>
+<span>History</span></a>
+</li>
+
+<li class="active">
+     <a href="report.html">
+<i class="ri-bar-chart-box-line"></i>
+<span>Reports</span></a>
+</li>
+
+<li>
+    <a href="settings.html">
+<i class="ri-settings-3-line"></i>
+<span>Settings</span></a>
+</li>
+
+</ul>
+
+</aside>
+
+<section class="dashboard">
+
+<nav class="topbar">
+
+<h2>Reports</h2>
+
+<div class="profile">
+
+    <div class="notification-menu">
+
+        <i class="ri-notification-3-line" id="notificationIcon"></i>
+
+        <div class="notification-dropdown" id="notificationDropdown">
+
+        </div>
+
+    </div>
+
+    <div class="profile-menu">
+
+        <i class="ri-account-circle-fill" id="profileIcon"></i>
+
+        <div class="dropdown" id="profileDropdown">
+
+            <a href="settings.html">⚙️ Settings</a>
+            <a href="#" id="logoutBtn">🚪 Logout</a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</nav>
+
+<div class="page-title">
+
+<h1>Monthly Report</h1>
+
+<p>Analyze your monthly income and expenses.</p>
+
+</div>
+
+<div class="report-cards">
+
+<div class="report-card">
+<h4>Total Income</h4>
+<h2 id="reportIncome">₹0</h2>
+</div>
+
+<div class="report-card">
+<h4>Total Expense</h4>
+<h2 id="reportExpense">₹0</h2>
+</div>
+
+<div class="report-card">
+<h4>Balance</h4>
+<h2 id="reportBalance">₹0</h2>
+</div>
+
+<div class="report-card">
+<h4>Saving</h4>
+<h2 id="reportSaving">0%</h2>
+</div>
+
+</div>
+
+<div class="chart-grid">
+
+<div class="chart-card">
+
+<h3>Expense Categories</h3>
+
+<canvas id="expenseChart"></canvas>
+
+</div>
+
+<div class="chart-card">
+
+<h3>Income vs Expense</h3>
+
+<canvas id="incomeChart"></canvas>
+
+</div>
+
+</div>
+
+<div class="report-bottom">
+
+<div class="goal-card">
+
+<h3>Budget Goal</h3>
+
+<div class="goal-bar">
+
+<div class="goal-fill" id="goalFill"></div>
+
+
+</div>
+<p id="goalText">0% Completed</p>
+
+</div>
+
+<div class="spending-card">
+
+<h3>Top Spending Categories</h3>
+
+<ul id="topSpending">
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="script.js"></script>
+<script src="script3.js"></script>
+</body>
+</html>

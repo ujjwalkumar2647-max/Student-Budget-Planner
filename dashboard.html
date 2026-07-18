@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Budget Planner</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <aside class="sidebar">
+
+            <div class="brand">
+                <i class="ri-wallet-3-fill"></i>
+                <h2>Budget Planner</h2>
+            </div>
+
+            <ul>
+                <li class="active">
+    <a href="dashboard.html">
+        <i class="ri-home-5-fill"></i>
+        <span>Dashboard</span>
+    </a>
+</li>
+
+                <li>
+    <a href="Income.html">
+        <i class="ri-money-rupee-circle-fill"></i>
+        <span>Income</span>
+    </a>
+</li>
+
+               <li>
+    <a href="expense.html">
+        <i class="ri-shopping-cart-2-fill"></i>
+        <span>Expenses</span>
+    </a>
+</li>
+
+             <li>
+    <a href="history.html">
+        <i class="ri-history-line"></i>
+        <span>History</span>
+    </a>
+</li>
+
+             <li>
+    <a href="report.html">
+        <i class="ri-bar-chart-box-line"></i>
+        <span>Reports</span>
+    </a>
+</li>
+
+             <li>
+    <a href="settings.html">
+        <i class="ri-settings-3-line"></i>
+        <span>Settings</span>
+    </a>
+</li>
+
+        </aside>
+
+        <section class="dashboard">
+
+            <nav class="topbar">
+
+                <h2>Dashboard</h2>
+
+              <div class="profile">
+
+    <div class="notification-menu">
+
+        <i class="ri-notification-3-line" id="notificationIcon"></i>
+
+        <div class="notification-dropdown" id="notificationDropdown">
+
+        </div>
+
+    </div>
+
+    <div class="profile-menu">
+
+        <i class="ri-account-circle-fill" id="profileIcon"></i>
+
+        <div class="dropdown" id="profileDropdown">
+
+           <a href="settings.html">
+    <i class="ri-settings-3-line"></i>
+    Settings
+</a>
+
+<a href="#" id="logoutBtn">
+    <i class="ri-logout-box-r-line"></i>
+    Logout
+</a>
+
+        </div>
+
+    </div>
+
+</div>
+
+            </nav>
+
+            <div class="welcome">
+
+                <h1 id="welcomeUser">Welcome Back 👋</h1>
+
+                <p>Track your income and expenses smartly.</p>
+
+            </div>
+
+            <div class="summary">
+
+                <div class="box">
+                    <h4>Total Income</h4>
+                    <h2 id="dashboardIncome" >₹0</h2>
+                </div>
+
+                <div class="box">
+                    <h4>Total Expense</h4>
+                    <h2  id="dashboardExpense">₹0</h2>
+                </div>
+
+                <div class="box">
+                    <h4>Balance</h4>
+                    <h2 id="dashboardBalance">₹0</h2>
+                </div>
+
+                <div class="box">
+                    <h4>Savings Goal</h4>
+                    <h2 id="dashboardSavings">0%</h2>
+                </div>
+
+            </div>
+
+            <div class="dashboard-grid">
+
+    <div class="budget-box">
+
+        <h3>Budget Overview</h3>
+
+      <div class="progress-box">
+
+    <div class="progress-bar">
+
+        <div class="progress" id="dashboardProgress"></div>
+
+    </div>
+
+    <p id="dashboardProgressText">0% Budget Used</p>
+
+    
+
+</div>
+
+      
+
+    </div>
+
+    <div class="transaction-box">
+
+        <h3>Recent Transactions</h3>
+
+        <div id="recentTransactions">
+
+</div>
+    </div>
+
+</div>
+
+<div class="bottom-grid">
+
+    <div class="analytics">
+
+        <h3>Monthly Analytics</h3>
+
+        <div class="chart-box">
+
+<canvas id="dashboardChart"></canvas>
+        </div>
+
+    </div>
+
+    <div class="quick-actions in">
+
+        <h3>Quick Actions</h3>
+
+       <button id="addIncomeBtn">+ Add Income</button>
+
+<button id="addExpenseBtn">+ Add Expense</button>
+
+<button id="viewReportBtn">📊 View Reports</button>
+
+    </div>
+
+</div>
+
+<div class="insights">
+
+    <div class="tips">
+
+        <h3>Budget Tips</h3>
+
+        <div class="tip-card">
+            <h4>💡 Save More</h4>
+            <p>Reduce unnecessary shopping to increase your monthly savings.</p>
+        </div>
+
+        <div class="tip-card">
+            <h4>📌 Track Daily</h4>
+            <p>Recording expenses every day helps you stay within your budget.</p>
+        </div>
+
+    </div>
+
+    <div class="goals">
+
+        <h3>Savings Goal</h3>
+
+        <div class="goal-circle">
+            75%
+        </div>
+
+        <p>₹7,500 Saved of ₹10,000</p>
+
+    </div>
+
+</div>
+
+        </section>
+
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+<script src="script2.js"></script>
+</body>
+
+</html>

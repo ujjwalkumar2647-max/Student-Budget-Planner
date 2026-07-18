@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Budget Planner</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <aside class="sidebar">
+
+            <div class="brand">
+                <i class="ri-wallet-3-fill"></i>
+                <h2>Budget Planner</h2>
+            </div>
+
+            <ul>
+                <li >
+                    <a href="dashboard.html">
+                    <i class="ri-home-5-fill"></i>
+                    <span>Dashboard</span></a>
+                </li>
+
+                <li>
+                    <a href="Income.html">
+                    <i class="ri-money-rupee-circle-fill"></i>
+                    <span>Income</span></a>
+                </li>
+
+                <li class="active">
+                        <a href="expense.html">
+
+                    <i class="ri-shopping-cart-2-fill"></i>
+                    <span>Expenses</span></a>
+                </li>
+
+                <li>
+                        <a href="history.html">
+
+                    <i class="ri-history-line"></i>
+                    <span>History</span></a>
+                </li>
+
+                <li>
+                        <a href="report.html">
+
+                    <i class="ri-bar-chart-box-line"></i>
+                    <span>Reports</span></a>
+                </li>
+
+                <li>
+                        <a href="settings.html">
+
+                    <i class="ri-settings-3-line"></i>
+                    <span>Settings</span></a>
+                </li>
+            </ul>
+
+        </aside>
+
+        <section class="dashboard">
+
+            <nav class="topbar">
+
+                <h2>Expense</h2>
+
+              <div class="profile">
+
+    <div class="notification-menu">
+
+        <i class="ri-notification-3-line" id="notificationIcon"></i>
+
+        <div class="notification-dropdown" id="notificationDropdown">
+
+        </div>
+
+    </div>
+
+    <div class="profile-menu">
+
+        <i class="ri-account-circle-fill" id="profileIcon"></i>
+
+        <div class="dropdown" id="profileDropdown">
+
+            <a href="settings.html">⚙️ Settings</a>
+            <a href="#" id="logoutBtn">🚪 Logout</a>
+
+        </div>
+
+    </div>
+
+</div>
+            </nav>
+
+           <div class="page-title">
+
+    <h1>Add Daily Expense</h1>
+
+<p>Manage and record all your daily expenses.</p>
+
+</div>
+
+<div class="income-container">
+
+    <div class="income-form">
+
+        <h3>Add Expense</h3>
+
+        <div class="income-info expense-info"">
+
+    <h2 id="totalExpense">₹0</h2>
+
+    <p>Total Expense This Month</p>
+
+</div>
+
+       <form id="expenseForm">
+
+    <label>Expense Name</label>
+    <input type="text" id="expenseName" placeholder="e.g. Pizza">
+
+    <label>Category</label>
+
+    <select  id="expenseCategory">
+
+        <option>Food</option>
+        <option>Transport</option>
+        <option>Shopping</option>
+        <option>Education</option>
+        <option>Entertainment</option>
+        <option>Bills</option>
+        <option>Others</option>
+
+    </select>
+
+    <label>Amount</label>
+    <input type="number" id="expenseAmount" placeholder="Enter amount">
+
+    <label>Date</label>
+    <input type="date" id="expenseDate">
+
+    <label>Description</label>
+    <textarea placeholder="Write a short note" id="expenseDescription"></textarea>
+
+    <button id="saveExpense" class="expense-btn" type="submit">Save Expense</button>
+
+</form>
+
+    </div>
+
+    <div class="income-table">
+
+    <div class="table-head">
+
+        <h3>Expense History</h3>
+
+        <div class="table-actions">
+
+            <input type="search" id="searchExpense" placeholder="Search Expense">
+
+            
+
+        </div>
+
+    </div>
+
+    <table>
+
+        <thead>
+
+            <tr>
+
+               <th>Name</th>
+           <th>Category</th>
+           <th>Amount</th>
+           <th>Date</th>
+           <th>Description</th>
+           <th>Action</th>
+
+            </tr>
+
+        </thead>
+
+     <tbody id="expenseTableBody"></tbody>
+
+    </table>
+
+</div>
+    
+
+        </section>
+
+    </div>
+
+    <script src="script2.js"></script>
+
+</body>
+
+</html>
