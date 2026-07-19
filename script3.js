@@ -13,8 +13,6 @@
 
 
 
-
-
 const topSpending = document.getElementById("topSpending");
 
 if (topSpending) {
@@ -385,8 +383,8 @@ if (updateProfile) {
 
     updateProfile.addEventListener("click", function () {
 
-        const newName = profileName.value.trim();
-
+const newName = profileName.value.trim();
+const newEmail = profileEmail.value.trim();
         if (!newName) {
 
             alert("Enter your name");
@@ -397,22 +395,26 @@ if (updateProfile) {
 
         let users = JSON.parse(localStorage.getItem("users")) || [];
 
-        users.forEach(user => {
+      users.forEach(user => {
 
-            if (user.email === currentUser.email) {
+    if (user.email === currentUser.email) {
 
-                user.name = newName;
+        user.name = newName;
+        user.email = newEmail;
 
-            }
+    }
 
-        });
+});
 
         currentUser.name = newName;
+currentUser.email = newEmail;
 
         localStorage.setItem("users", JSON.stringify(users));
 
         localStorage.setItem("currentUser", JSON.stringify(currentUser));
 
+
+        
         alert("Profile Updated Successfully");
 window.location.href = "dashboard.html";
     });
@@ -467,80 +469,6 @@ if (updatePassword) {
 
         alert("Password Updated Successfully");
 
-    });
-
-}
-
-const profileLogoutBtn = document.getElementById("logoutBtn");
-
-if (profileLogoutBtn) {
-
-    profileLogoutBtn.addEventListener("click", function (e) {
-
-        e.preventDefault();
-
-        localStorage.removeItem("currentUser");
-
-        window.location.href = "index.html";
-
-    });
-
-}
-
-const profileIcon = document.getElementById("profileIcon");
-const profileDropdown = document.getElementById("profileDropdown");
-
-if (profileIcon && profileDropdown) {
-
-    profileIcon.addEventListener("click", function (e) {
-        e.stopPropagation();
-        profileDropdown.classList.toggle("show");
-    });
-
-    document.addEventListener("click", function () {
-        profileDropdown.classList.remove("show");
-    });
-
-}
-
-const notificationIcon = document.getElementById("notificationIcon");
-const notificationDropdown = document.getElementById("notificationDropdown");
-
-if (notificationIcon && notificationDropdown) {
-
-    notificationIcon.addEventListener("click", function (e) {
-
-        e.stopPropagation();
-
-        let notifications = JSON.parse(localStorage.getItem("notifications")) || [];
-
-        notificationDropdown.innerHTML = "";
-
-        if (notifications.length === 0) {
-
-            notificationDropdown.innerHTML = "<p style='padding:15px'>No Notifications</p>";
-
-        } else {
-
-            notifications.forEach(item => {
-
-                notificationDropdown.innerHTML += `
-                    <div class="notification-item">
-                        <p>${item.message}</p>
-                        <small>${item.time}</small>
-                    </div>
-                `;
-
-            });
-
-        }
-
-        notificationDropdown.classList.toggle("show");
-
-    });
-
-    document.addEventListener("click", function () {
-        notificationDropdown.classList.remove("show");
     });
 
 }

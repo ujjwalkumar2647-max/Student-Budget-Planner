@@ -4,7 +4,14 @@
 // ----------- expense module------------dashboard---------------balance calculation------------ recent transactions--------
 
 
+const menuBtn = document.querySelector(".menu-toggle");
+const sidebar = document.querySelector(".sidebar");
 
+if (menuBtn && sidebar) {
+    menuBtn.addEventListener("click", function () {
+        sidebar.classList.toggle("active");
+    });
+}
 
 
 function addNotification(message) {
